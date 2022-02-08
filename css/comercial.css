@@ -2,7 +2,7 @@
     padding: 0%;
     margin: 0%
 }
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Zen+Kaku+Gothic+Antique&display=swap');
+
 html {
     box-sizing: border-box;
     font-size: 62,5%;
@@ -10,14 +10,19 @@ html {
     padding: 0%;
   }
 
+:root{
+    --MainFont: 'Outfit', sans-serif;
+    --mainColor:#fff9c4;
+    --green: #2c8160;
+}
 
  *, *:before, *:after {
     box-sizing: inherit;
   }
 
 body{
-    background-color: rgb(255, 224, 122);
-    font-family:'Zen Kaku Gothic Antique', sans-serif ;
+    background-color: var(--mainColor);
+    font-family: var(--MainFont);
     line-height: 2;
 
 }
@@ -28,7 +33,8 @@ body{
     margin: 0 auto;
 }
 h1,h2,h3,h4{
-    font-family: sans-serif;
+    font-family: var(--MainFont);
+    font-weight: 400;
 }
 
 h1{
@@ -49,7 +55,7 @@ h4{
 
 p,a{
     font-size: 1.2rem;
-    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    font-family: var(--MainFont) ;
     color: #262626;
 }
 
@@ -57,51 +63,51 @@ img{
     max-width: 100%;
 }
 
-.titulo{
-    max-width: 100%;
-    margin: 1rem auto;
-    text-align: center;
-    color:#262626 ;
-    font-family: 'Dancing Script', cursive;
+
+
+.nav-container{
+  display: grid;
+  align-items: center;
+  justify-content: center;
 }
 
-
-.titulo span{
-   font-size: small;
-}
-
-
-nav{
-    border: 2px solid #262626;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin: 10px;
-    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+h2 span{
+    font-size: small
 }
 
 a{
     padding: 3px;
     text-decoration: none;
     color: #262626;
-    transition: font-size .3s ease;
+    transition: color .3s ease;
+    
 }
 
 nav a:hover{
-    font-size: 1.3rem;
+   color: var(--green);
 }
 
+.nav-items{
+    display: flex;
+    justify-content: space-around;
+}
+
+
 @media(min-width: 768px) {
-    nav{
-        flex-direction: row;
-        justify-content: space-evenly;
+    .nav-container{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .nav-items{
+        display: flex;
+        gap: 1rem;
     }
 }
 
 .contenedor-img{
     margin-top: 30px;
     margin-bottom: 30px;
-    border: whitesmoke solid 5px;
     background-image: url(../media/vegetarian.jpg) ;
     background-repeat: no-repeat;
     background-size: cover;
@@ -137,7 +143,7 @@ nav a:hover{
 }
 
 .separador{
-    border: #262626 solid 1px;
+    border:var(--green) solid 1px;
     width: 50%;
     margin: auto; 
 }
@@ -150,27 +156,28 @@ nav a:hover{
 .productos__contenedor{
    text-align: center;
    margin: 2rem auto;
-   max-width: 85%;  
+   max-width: 85%; 
 }
 
 
 .boton-menu{
     width: 11rem;
-    height: 3rem;
+    height: 4rem;
     align-self: center;
     margin: 0 auto;
     text-transform: uppercase;
-    background-color: #262626;
-    border: none;
-    color: whitesmoke;
+    background-color: var(--mainColor);
+        border: #262626 solid 2px;
+        color: #262626;
     font-family:'PT Sans', sans-serif ;
     margin: 2rem 0rem;
     cursor: pointer;
-    transition: width .3s ease;
+    transition: width .7s ease;
 }
 
 .boton-menu:hover{
-    width: 12rem;
+    background-color: var(--green);
+    color: #fff9c4;
 }
 
 @media(min-width: 768px) {
@@ -183,13 +190,13 @@ nav a:hover{
 
     .boton-menu{
         width: 11rem;
-        height: 3rem;
+        height: 4rem;
         align-self: center;
         margin: 0 auto;
         text-transform: uppercase;
-        background-color: #262626;
-        border: none;
-        color: whitesmoke;
+        background-color: var(--mainColor);
+        border: #262626 solid 2px;
+        color: #262626;
         font-family:'PT Sans', sans-serif ;
     }
 }
@@ -198,10 +205,8 @@ nav a:hover{
 .producto__img{
     width: 300px;
     height: 200px;
-    border: whitesmoke 5px solid;
     margin-top: 4%;
-    margin-bottom: 4%;
-    
+    margin-bottom: 4%;  
 }
 
 
@@ -209,7 +214,6 @@ nav a:hover{
 .producto__img{
     height: 200px;
     width: 300px;
-    border: whitesmoke 5px solid;
     margin-top: 4%;
     margin-bottom: 4%;
 }
@@ -220,12 +224,10 @@ nav a:hover{
 .resto1-image{
     width: 8rem;
     height: 8rem;
-    border: whitesmoke solid 5px;
     text-align: center;
     margin-top: 0.3rem;
+    
 }
-
-
 
 .contenedor__resto{
     width: 80%;
@@ -236,30 +238,19 @@ nav a:hover{
     font-size: 1.5rem;
 }
 
-
-
 .footer-contain{
+    height: 10rem;
     background-color: #262626;
-    border: whitesmoke 5px solid;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
-}
-.footer-contacto{
-    color:khaki;
-    text-align: center;
-    margin: 0.5rem;
 }
 
-.footer-contacto h3{
-    font-size: 1rem;
+.icons{
+    display: flex;
+    gap: 2rem;
+    margin-left: 1rem;
 }
-.footer-contacto p{
-    color:khaki;
-    font-size: 1rem;
-}
+
+
+
 
 
 @media(min-width: 768px) {
@@ -277,7 +268,7 @@ nav a:hover{
     .resto1-image{
     width: 11rem;
     height: 11rem;
-    border: whitesmoke solid 5px;
+    border: var(--mainColor) solid 5px;
     text-align: center;
     margin-top: 0.3rem;
     }
@@ -291,8 +282,9 @@ nav a:hover{
     }
 
     .resto3-img{
-        border: whitesmoke solid 5px;
+        border: var(--mainColor) solid 5px;
         width: 70%;
+        margin: 3rem auto;
     }
 
     .resto__descripcion{
@@ -300,16 +292,25 @@ nav a:hover{
         margin: 0 auto;
     }
 
-    .footer-contacto{
-    color:khaki;
-    text-align: center;
-    font-size: 1.5rem;
+    .footer-contain{
+        background-color: #262626;
+        height: 10rem;
     }
-
-    .footer-contacto p{
-    color:khaki;
+    
+    .icons{
+        display: flex;
+        margin-left: 2rem ;
     }
-
+    
+    .icon{
+        width: 50px;
+    }
+    .legal{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+    }
 }
 
 
@@ -326,7 +327,7 @@ nav a:hover{
 }
 
 .formulario{
-    background-color: rgb(255, 224, 122);
+    background-color: var(--mainColor) ;
     margin: -10rem auto 0 auto;
     width: 95%;
     padding: 1rem 1rem;
@@ -358,7 +359,7 @@ nav a:hover{
     flex: 1;
     border: 1px solid grey;
     padding-top: 0.5rem;
-    background-color: rgb(255, 224, 122);
+    background-color:#fff9c4;
 }
 
 .campo__field--textarea{
