@@ -13,7 +13,7 @@ html {
 :root{
     --MainFont: 'Outfit', sans-serif;
     --mainColor:#fff9c4;
-    --green: #2c8160;
+    --green: #99d98c;
 }
 
  *, *:before, *:after {
@@ -85,6 +85,10 @@ a{
 
 nav a:hover{
    color: var(--green);
+}
+
+.nav-items_enlaces--activo{
+    color: var(--green);
 }
 
 .nav-items{
@@ -177,7 +181,7 @@ nav a:hover{
 
 .boton-menu:hover{
     background-color: var(--green);
-    color: #fff9c4;
+    color: #262626;
 }
 
 @media(min-width: 768px) {
@@ -238,15 +242,36 @@ nav a:hover{
     font-size: 1.5rem;
 }
 
+
 .footer-contain{
     height: 10rem;
     background-color: #262626;
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
 }
 
 .icons{
+    font-size: 1.6rem;
     display: flex;
     gap: 2rem;
     margin-left: 1rem;
+    color: var(--mainColor);
+}
+
+.legal{
+    color: var(--mainColor);
+}
+
+.derechos{
+    text-align: center;
+    
+}
+.derechos span{
+    font-size: 0.5rem;
 }
 
 
@@ -295,21 +320,32 @@ nav a:hover{
     .footer-contain{
         background-color: #262626;
         height: 10rem;
+        display: flex;
+        justify-content: space-around;
     }
     
     .icons{
         display: flex;
-        margin-left: 2rem ;
+        margin-left: 2rem;
+        gap: 4rem;
     }
     
     .icon{
-        width: 50px;
+        color: var(--mainColor);
+        font-size: 1.5rem;
     }
+
+
     .legal{
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 2rem;
+        color: var(--mainColor);
+    }
+
+    .derechos{
+        text-align: center;
     }
 }
 
